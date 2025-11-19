@@ -1,0 +1,1017 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/27/2025 2:56:54 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-80EOCJ3"
+  DTS:CreatorName="DESKTOP-80EOCJ3\HP"
+  DTS:DTSID="{F9ACFA05-BC2F-4AFF-B548-21E38F636745}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="16393"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{40E939D2-8E90-46D2-937D-A92F07DBB720}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-80EOCJ3\SQLSERVER2022]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B5BA2ACF-50DC-46B2-B00F-92150CB5A4EB}"
+      DTS:ObjectName="DESKTOP-80EOCJ3\SQLSERVER2022">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-80EOCJ3\SQLSERVER2022;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C7CCA718-1FCF-4945-8C28-AD2494219D2C}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[ImportedOrders]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-80EOCJ3\SQLSERVER2022]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-80EOCJ3\SQLSERVER2022]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OrderID]"
+                      cachedDataType="i4"
+                      cachedName="OrderID"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderID]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[OrderID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CustomerID]"
+                      cachedDataType="i4"
+                      cachedName="CustomerID"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[CustomerID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OrderDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="OrderDate"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderDate]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[OrderDate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RequiredDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="RequiredDate"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RequiredDate]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[RequiredDate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ShippedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ShippedDate"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ShippedDate]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[ShippedDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderID]"
+                      dataType="i4"
+                      name="OrderID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
+                      dataType="wstr"
+                      length="5"
+                      name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
+                      dataType="i4"
+                      name="EmployeeID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      name="OrderDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RequiredDate]"
+                      dataType="dbTimeStamp"
+                      name="RequiredDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ShippedDate]"
+                      dataType="dbTimeStamp"
+                      name="ShippedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ShipVia]"
+                      dataType="i4"
+                      name="ShipVia" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Freight]"
+                      dataType="r8"
+                      name="Freight" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ShipName]"
+                      dataType="wstr"
+                      length="40"
+                      name="ShipName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ShipAddress]"
+                      dataType="wstr"
+                      length="60"
+                      name="ShipAddress" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ShipCity]"
+                      dataType="wstr"
+                      length="15"
+                      name="ShipCity" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ShipRegion]"
+                      dataType="wstr"
+                      length="15"
+                      name="ShipRegion" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ShipPostalCode]"
+                      dataType="wstr"
+                      length="10"
+                      name="ShipPostalCode" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ShipCountry]"
+                      dataType="wstr"
+                      length="15"
+                      name="ShipCountry" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\XML Source"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Extracts data from an XML file. For example, extract catalog data from an XML file that represents catalogs and catalog items. Before using, specify the schema and generate an output for each XML element.;Microsoft Corporation;Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Extracts data from an XML file. For example, extract catalog data from an XML file that represents catalogs and catalog items. Before using, specify the schema and generate an output for each XML element."
+              name="XML Source"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.XmlSourceAdapter</property>
+                <property
+                  dataType="System.String"
+                  description="The XML data used by the XML source adapter."
+                  expressionType="Notify"
+                  name="XMLData">D:\UNH\SEMESTER 2\DATABASE MANAGEMENT\PRACS\ETL_project2\ETL_Lab_Files\Orders.xml</property>
+                <property
+                  dataType="System.String"
+                  description="The variable used by the XML source adapter to specify XML data."
+                  name="XMLDataVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Defines how the XML source adapter gets XML data."
+                  name="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The XML schema definition used by the XML source adapter."
+                  expressionType="Notify"
+                  name="XMLSchemaDefinition">D:\UNH\SEMESTER 2\DATABASE MANAGEMENT\PRACS\ETL_project2\ETL_Lab_Files\Orders.xsd</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Identifies whether or not to use inline schema."
+                  name="UseInlineSchema">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Defines how XML integer types are mapped."
+                  name="XMLIntegerMapping"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.XmlSourceAdapter+XMLIntegerMappingConverter">0</property>
+              </properties>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\XML Source.Outputs[Orders]"
+                  name="Orders">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Identifies the rowset associated with the output."
+                      name="RowsetID">Orders</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[OrderID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[OrderID]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[OrderID]"
+                      name="OrderID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[CustomerID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[CustomerID]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[CustomerID]"
+                      name="CustomerID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[SalesRepID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[SalesRepID]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[SalesRepID]"
+                      name="SalesRepID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[ShipperID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[ShipperID]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[ShipperID]"
+                      name="ShipperID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[OrderDate]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[OrderDate]"
+                      name="OrderDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[RequiredDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[RequiredDate]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[RequiredDate]"
+                      name="RequiredDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[ShippedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[ShippedDate]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[ShippedDate]"
+                      name="ShippedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[PackagingType]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[PackagingType]"
+                      length="20"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[PackagingType]"
+                      name="PackagingType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[PackageWeight]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[PackageWeight]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[PackageWeight]"
+                      name="PackageWeight"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[QuotationAmount]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[QuotationAmount]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[QuotationAmount]"
+                      name="QuotationAmount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[InvoiceAmount]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[InvoiceAmount]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[InvoiceAmount]"
+                      name="InvoiceAmount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[SalesTax]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[SalesTax]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[SalesTax]"
+                      name="SalesTax"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[MaterialCost]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[MaterialCost]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[MaterialCost]"
+                      name="MaterialCost"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[ProcessingCost]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[ProcessingCost]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[ProcessingCost]"
+                      name="ProcessingCost"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[FulfillmentCost]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[FulfillmentCost]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[FulfillmentCost]"
+                      name="FulfillmentCost"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[ShippingCost]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[ShippingCost]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[ShippingCost]"
+                      name="ShippingCost"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[ReturnCost]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[ReturnCost]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[ReturnCost]"
+                      name="ReturnCost"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[DailyInventoryCost]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[DailyInventoryCost]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[DailyInventoryCost]"
+                      name="DailyInventoryCost"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[PaymentType]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[PaymentType]"
+                      length="15"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[PaymentType]"
+                      name="PaymentType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[BoxType]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[BoxType]"
+                      length="15"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders].Columns[BoxType]"
+                      name="BoxType"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[OrderID]"
+                      dataType="i4"
+                      name="OrderID">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.Int32</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[CustomerID]"
+                      dataType="i4"
+                      name="CustomerID">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.Int32</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[SalesRepID]"
+                      dataType="i4"
+                      name="SalesRepID">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.Int32</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[ShipperID]"
+                      dataType="i4"
+                      name="ShipperID">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.Int32</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      name="OrderDate">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.DateTime</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[RequiredDate]"
+                      dataType="dbTimeStamp"
+                      name="RequiredDate">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.DateTime</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[ShippedDate]"
+                      dataType="dbTimeStamp"
+                      name="ShippedDate">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.DateTime</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[PackagingType]"
+                      dataType="wstr"
+                      length="20"
+                      name="PackagingType">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[PackageWeight]"
+                      dataType="decimal"
+                      name="PackageWeight"
+                      scale="10">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.Decimal</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[QuotationAmount]"
+                      dataType="i2"
+                      name="QuotationAmount">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.Int16</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[InvoiceAmount]"
+                      dataType="i2"
+                      name="InvoiceAmount">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.Int16</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[SalesTax]"
+                      dataType="i2"
+                      name="SalesTax">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.Int16</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[MaterialCost]"
+                      dataType="i2"
+                      name="MaterialCost">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.Int16</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[ProcessingCost]"
+                      dataType="decimal"
+                      name="ProcessingCost"
+                      scale="10">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.Decimal</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[FulfillmentCost]"
+                      dataType="i2"
+                      name="FulfillmentCost">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.Int16</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[ShippingCost]"
+                      dataType="i2"
+                      name="ShippingCost">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.Int16</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[ReturnCost]"
+                      dataType="i2"
+                      name="ReturnCost">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.Int16</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[DailyInventoryCost]"
+                      dataType="decimal"
+                      name="DailyInventoryCost"
+                      scale="10">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.Decimal</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[PaymentType]"
+                      dataType="wstr"
+                      length="15"
+                      name="PaymentType">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders].ExternalColumns[BoxType]"
+                      dataType="wstr"
+                      length="15"
+                      name="BoxType">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output]"
+                  isErrorOut="true"
+                  name="Orders Error Output">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Identifies the rowset associated with the output."
+                      name="RowsetID">Orders</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[OrderID]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[OrderID]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[OrderID]"
+                      name="OrderID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[CustomerID]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[CustomerID]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[CustomerID]"
+                      name="CustomerID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[SalesRepID]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[SalesRepID]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[SalesRepID]"
+                      name="SalesRepID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[ShipperID]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[ShipperID]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[ShipperID]"
+                      name="ShipperID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[OrderDate]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[OrderDate]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[OrderDate]"
+                      name="OrderDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[RequiredDate]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[RequiredDate]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[RequiredDate]"
+                      name="RequiredDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[ShippedDate]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[ShippedDate]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[ShippedDate]"
+                      name="ShippedDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[PackagingType]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[PackagingType]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[PackagingType]"
+                      name="PackagingType" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[PackageWeight]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[PackageWeight]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[PackageWeight]"
+                      name="PackageWeight" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[QuotationAmount]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[QuotationAmount]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[QuotationAmount]"
+                      name="QuotationAmount" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[InvoiceAmount]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[InvoiceAmount]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[InvoiceAmount]"
+                      name="InvoiceAmount" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[SalesTax]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[SalesTax]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[SalesTax]"
+                      name="SalesTax" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[MaterialCost]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[MaterialCost]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[MaterialCost]"
+                      name="MaterialCost" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[ProcessingCost]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[ProcessingCost]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[ProcessingCost]"
+                      name="ProcessingCost" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[FulfillmentCost]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[FulfillmentCost]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[FulfillmentCost]"
+                      name="FulfillmentCost" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[ShippingCost]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[ShippingCost]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[ShippingCost]"
+                      name="ShippingCost" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[ReturnCost]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[ReturnCost]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[ReturnCost]"
+                      name="ReturnCost" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[DailyInventoryCost]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[DailyInventoryCost]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[DailyInventoryCost]"
+                      name="DailyInventoryCost" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[PaymentType]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[PaymentType]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[PaymentType]"
+                      name="PaymentType" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[BoxType]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[BoxType]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[BoxType]"
+                      name="BoxType" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[OrderID]"
+                      dataType="nText"
+                      name="OrderID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[CustomerID]"
+                      dataType="nText"
+                      name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[SalesRepID]"
+                      dataType="nText"
+                      name="SalesRepID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[ShipperID]"
+                      dataType="nText"
+                      name="ShipperID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[OrderDate]"
+                      dataType="nText"
+                      name="OrderDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[RequiredDate]"
+                      dataType="nText"
+                      name="RequiredDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[ShippedDate]"
+                      dataType="nText"
+                      name="ShippedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[PackagingType]"
+                      dataType="nText"
+                      name="PackagingType" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[PackageWeight]"
+                      dataType="nText"
+                      name="PackageWeight" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[QuotationAmount]"
+                      dataType="nText"
+                      name="QuotationAmount" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[InvoiceAmount]"
+                      dataType="nText"
+                      name="InvoiceAmount" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[SalesTax]"
+                      dataType="nText"
+                      name="SalesTax" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[MaterialCost]"
+                      dataType="nText"
+                      name="MaterialCost" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[ProcessingCost]"
+                      dataType="nText"
+                      name="ProcessingCost" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[FulfillmentCost]"
+                      dataType="nText"
+                      name="FulfillmentCost" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[ShippingCost]"
+                      dataType="nText"
+                      name="ShippingCost" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[ReturnCost]"
+                      dataType="nText"
+                      name="ReturnCost" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[DailyInventoryCost]"
+                      dataType="nText"
+                      name="DailyInventoryCost" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[PaymentType]"
+                      dataType="nText"
+                      name="PaymentType" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Orders Error Output].ExternalColumns[BoxType]"
+                      dataType="nText"
+                      name="BoxType" />
+                  </externalMetadataColumns>
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Orders]"
+              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Orders"
+              startId="Package\Data Flow Task\XML Source.Outputs[Orders]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="135.2,41.6"
+          Id="Package\Data Flow Task\XML Source"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="15.5000010927518,99.6333328873582" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Orders]"
+          TopLeft="73.1,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="28.0000010927518,52.5333328873581"
+              Start="0,0"
+              End="28.0000010927518,45.0333328873581">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.2666664436791" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.2666664436791"
+                    Point2="0,26.2666664436791"
+                    Point3="4,26.2666664436791" />
+                  <mssgle:LineSegment
+                    End="24.0000010927518,26.2666664436791" />
+                  <mssgle:CubicBezierSegment
+                    Point1="24.0000010927518,26.2666664436791"
+                    Point2="28.0000010927518,26.2666664436791"
+                    Point3="28.0000010927518,30.2666664436791" />
+                  <mssgle:LineSegment
+                    End="28.0000010927518,45.0333328873581" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
