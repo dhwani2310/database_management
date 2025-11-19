@@ -1,0 +1,75 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>OLAP_HW</Database>
+    <Server>DESKTOP-80EOCJ3\SQLSERVER2022</Server>
+    <ConnectionString>Data Source=DESKTOP-80EOCJ3\SQLSERVER2022;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>Default</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>k4t9iBxwt7weHmrLSDXzdERn61g=03-05-2025 21:18:2403-05-2025 20:35:43</TimeStamp>
+        <ID>
+          <String>Connection_DhwaniPathak_Finance</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>IXI9vvath0q2qu2Ij25/bUQ6w5A=03-05-2025 20:38:2503-05-2025 20:38:24</TimeStamp>
+        <ID>
+          <String>DataSourceView_ DhwaniPathak_Finance</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>iEQYE04XCWafb2ujjsN3aa0xkXQ=03-05-2025 20:39:5003-05-2025 20:39:50</TimeStamp>
+        <ID>
+          <String>DimAccount</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>3Se3+ITwDrP4yaQzzs3NQRX0tEM=03-05-2025 20:40:2903-05-2025 20:40:29</TimeStamp>
+        <ID>
+          <String>DimOrganization</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Q4jJIz7Qrb3WM7dHjgp0GlF41YQ=03-05-2025 20:41:3603-05-2025 20:41:36</TimeStamp>
+        <ID>
+          <String>DimDate</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>SY8s2IW/B4SHvV+d1FGG2OeuLfg=03-05-2025 21:10:4803-05-2025 21:10:48PLjRi4dRUBDKh/bdeTcyupDHypg=03-05-2025 21:10:4803-05-2025 21:10:48</TimeStamp>
+        <ID>
+          <String>Cube_ DhwaniPathak_Finance</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>5CV4n83+/i0NZoUoatp396vgfVI=03-05-2025 20:34:0603-05-2025 20:34:06</TimeStamp>
+      <ID>
+        <String>OLAP_HW</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2025-05-04T01:18:42.513333Z</LastDeployed>
+</DeploymentSnapshot>
