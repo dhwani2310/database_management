@@ -1,0 +1,29 @@
+<AnalysisServicesUserConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Configurations>
+    <Configuration>
+      <Name>Development</Name>
+      <Options>
+        <UserIDs>
+          <ConfigurationSetting>
+            <Id>Adventure Works DW2022</Id>
+            <Name>Adventure Works DW2022</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAL5m27yf7REOEaiAfIa7s3gAAAAAuAAAAQQBkAHYAZQBuAHQAdQByAGUAIABXAG8AcgBrAHMAIABEAFcAMgAwADIAMgAAABBmAAAAAQAAIAAAAG9BZITNc4y3J6OcC7ZBQiFtd58dnWD7XC0velzTcUgYAAAAAA6AAAAAAgAAIAAAAKnU4CGXtEA4NX9MNm8ZhYDRCCPZR/+gVdYXyjJhNDLIEAAAADCSNjR/VsDuZeC+mH8MIEtAAAAAVR8awRD9/NfCNZ1ADqZJgfCs7q67aEeB8biKpgMjaH/xoh270LmejP4LJIbPdKPFJuv5tiqMhn1/gVJQ36nO/w==</Value>
+          </ConfigurationSetting>
+        </UserIDs>
+        <UserPasswords>
+          <ConfigurationSetting>
+            <Id>Adventure Works DW2022</Id>
+            <Name>Adventure Works DW2022</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAL5m27yf7REOEaiAfIa7s3gAAAAAuAAAAQQBkAHYAZQBuAHQAdQByAGUAIABXAG8AcgBrAHMAIABEAFcAMgAwADIAMgAAABBmAAAAAQAAIAAAAId36qH66nh/55V1MNXt68De3DMrLKoQBK9q5vtM3QF5AAAAAA6AAAAAAgAAIAAAAN9euprjgOwGAr936/KV+H++GmY12n3OjhAObF11PnV9EAAAAH5ALUvteLPH035L5Y+hg4BAAAAAHyfJNjT7Eh3i2xhf9oFW6iYihVWmFyqTTlr0Q/a1Ii96iO7Fn8KjvNpNoP2K6LpAuH8FEpaenJHF1hL+noPFxw==</Value>
+          </ConfigurationSetting>
+        </UserPasswords>
+        <TargetServer>DESKTOP-80EOCJ3\SQLSERVER2022</TargetServer>
+        <TargetDatabase>OLAP_1</TargetDatabase>
+        <StartObject>
+          <ObjectId></ObjectId>
+          <ObjectType>Current</ObjectType>
+        </StartObject>
+      </Options>
+    </Configuration>
+  </Configurations>
+</AnalysisServicesUserConfiguration>
