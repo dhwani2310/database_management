@@ -1,0 +1,1755 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/14/2025 4:43:05 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-80EOCJ3"
+  DTS:CreatorName="DESKTOP-80EOCJ3\HP"
+  DTS:DTSID="{842EE1B0-3DD5-4948-8727-5CD377B39EBF}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="16393"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{130A8EFA-B456-4E35-BDDE-9F28A5E65645}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-80EOCJ3\SQLSERVER2022.BI_DATABASE]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2C379763-C836-4E83-8F56-81B928963E5B}"
+      DTS:ObjectName="DESKTOP-80EOCJ3\SQLSERVER2022.BI_DATABASE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-80EOCJ3\SQLSERVER2022;Initial Catalog=BI_DATABASE;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-80EOCJ3\SQLSERVER2022.BI_DATABASE 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E10D23C6-F9B0-4B67-9AE2-9C8023B4F954}"
+      DTS:ObjectName="DESKTOP-80EOCJ3\SQLSERVER2022.BI_DATABASE 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-80EOCJ3\SQLSERVER2022;Initial Catalog=BI_DATABASE;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-80EOCJ3\SQLSERVER2022.BI_DATABASE 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C331BB81-FA8A-442B-A0C9-204820931F44}"
+      DTS:ObjectName="DESKTOP-80EOCJ3\SQLSERVER2022.BI_DATABASE 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-80EOCJ3\SQLSERVER2022;Initial Catalog=BI_DATABASE;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-80EOCJ3\SQLSERVER2022.PracticeDatabase]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{900FB99B-83B7-4B9E-8D1D-256E475F0011}"
+      DTS:ObjectName="DESKTOP-80EOCJ3\SQLSERVER2022.PracticeDatabase">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-80EOCJ3\SQLSERVER2022;Initial Catalog=PracticeDatabase;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\TransferProductAggregates"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{6E56D73B-4335-4B6D-95BC-28A3A91EFFC8}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TransferProductAggregates"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\TransferProductAggregates\bl_NumberOfProductsBySupplier"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="bl_NumberOfProductsBySupplier"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[tbl_NumberOfProductsBySupplier]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\TransferProductAggregates\bl_NumberOfProductsBySupplier.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-80EOCJ3\SQLSERVER2022.BI_DATABASE]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-80EOCJ3\SQLSERVER2022.BI_DATABASE]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\TransferProductAggregates\bl_NumberOfProductsBySupplier.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\TransferProductAggregates\bl_NumberOfProductsBySupplier.Inputs[OLE DB Destination Input].Columns[SupplierID]"
+                      cachedDataType="i4"
+                      cachedName="SupplierID"
+                      externalMetadataColumnId="Package\TransferProductAggregates\bl_NumberOfProductsBySupplier.Inputs[OLE DB Destination Input].ExternalColumns[SupplierID]"
+                      lineageId="Package\TransferProductAggregates\NumberOfProductsBySupplier.Outputs[Aggregate Output 1].Columns[SupplierID]" />
+                    <inputColumn
+                      refId="Package\TransferProductAggregates\bl_NumberOfProductsBySupplier.Inputs[OLE DB Destination Input].Columns[ProductID]"
+                      cachedDataType="ui8"
+                      cachedName="ProductID"
+                      externalMetadataColumnId="Package\TransferProductAggregates\bl_NumberOfProductsBySupplier.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                      lineageId="Package\TransferProductAggregates\NumberOfProductsBySupplier.Outputs[Aggregate Output 1].Columns[ProductID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\TransferProductAggregates\bl_NumberOfProductsBySupplier.Inputs[OLE DB Destination Input].ExternalColumns[SupplierID]"
+                      dataType="i4"
+                      name="SupplierID" />
+                    <externalMetadataColumn
+                      refId="Package\TransferProductAggregates\bl_NumberOfProductsBySupplier.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                      dataType="numeric"
+                      name="ProductID"
+                      precision="20" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\TransferProductAggregates\bl_NumberOfProductsBySupplier.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\TransferProductAggregates\bl_NumberOfProductsBySupplier.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\bl_NumberOfProductsBySupplier.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\TransferProductAggregates\bl_NumberOfProductsBySupplier.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\bl_NumberOfProductsBySupplier.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\TransferProductAggregates\bl_NumberOfProductsBySupplier.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\TransferProductAggregates\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\TransferProductAggregates\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\TransferProductAggregates\Derived Column.Inputs[Derived Column Input].Columns[ProductPrice]"
+                      cachedDataType="numeric"
+                      cachedName="ProductPrice"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[ProductPrice]" />
+                    <inputColumn
+                      refId="Package\TransferProductAggregates\Derived Column.Inputs[Derived Column Input].Columns[UnitsInStock]"
+                      cachedDataType="i2"
+                      cachedName="UnitsInStock"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[UnitsInStock]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\TransferProductAggregates\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\TransferProductAggregates\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\Derived Column.Outputs[Derived Column Output].Columns[TotalProductValue]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\TransferProductAggregates\Derived Column.Outputs[Derived Column Output].Columns[TotalProductValue]"
+                      name="TotalProductValue"
+                      precision="11"
+                      scale="2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[ProductPrice]} * #{Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[UnitsInStock]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ProductPrice * UnitsInStock</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\TransferProductAggregates\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\TransferProductAggregates\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\TransferProductAggregates\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\TransferProductAggregates\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\TransferProductAggregates\GetProductData"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="GetProductData"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Products]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\TransferProductAggregates\GetProductData.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-80EOCJ3\SQLSERVER2022.PracticeDatabase]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-80EOCJ3\SQLSERVER2022.PracticeDatabase]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[ProductID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[ProductID]"
+                      name="ProductID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[SupplierID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[SupplierID]"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[SupplierID]"
+                      name="SupplierID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[ProductName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
+                      length="100"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[ProductName]"
+                      name="ProductName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[ContainerType]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[ContainerType]"
+                      length="25"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[ContainerType]"
+                      name="ContainerType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[ProductWeight]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[ProductWeight]"
+                      length="15"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[ProductWeight]"
+                      name="ProductWeight"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[IngredientType]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[IngredientType]"
+                      length="15"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[IngredientType]"
+                      name="IngredientType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[QualityRating]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[QualityRating]"
+                      length="20"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[QualityRating]"
+                      name="QualityRating"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[SKU]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[SKU]"
+                      length="255"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[SKU]"
+                      name="SKU"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[QuantityPerUnit]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[QuantityPerUnit]"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[QuantityPerUnit]"
+                      name="QuantityPerUnit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[ProductPrice]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[ProductPrice]"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[ProductPrice]"
+                      name="ProductPrice"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[ProductCost]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[ProductCost]"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[ProductCost]"
+                      name="ProductCost"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[UnitsInStock]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[UnitsInStock]"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[UnitsInStock]"
+                      name="UnitsInStock"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[UnitsOnOrder]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[UnitsOnOrder]"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[UnitsOnOrder]"
+                      name="UnitsOnOrder"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[ReorderLevel]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[ReorderLevel]"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[ReorderLevel]"
+                      name="ReorderLevel"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[CatalogLastUpdated]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[CatalogLastUpdated]"
+                      length="30"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[CatalogLastUpdated]"
+                      name="CatalogLastUpdated"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[DateEnteredInventory]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[DateEnteredInventory]"
+                      length="10"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[DateEnteredInventory]"
+                      name="DateEnteredInventory"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
+                      dataType="i4"
+                      name="ProductID" />
+                    <externalMetadataColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[SupplierID]"
+                      dataType="i4"
+                      name="SupplierID" />
+                    <externalMetadataColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
+                      dataType="wstr"
+                      length="100"
+                      name="ProductName" />
+                    <externalMetadataColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[ContainerType]"
+                      dataType="wstr"
+                      length="25"
+                      name="ContainerType" />
+                    <externalMetadataColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[ProductWeight]"
+                      dataType="wstr"
+                      length="15"
+                      name="ProductWeight" />
+                    <externalMetadataColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[IngredientType]"
+                      dataType="wstr"
+                      length="15"
+                      name="IngredientType" />
+                    <externalMetadataColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[QualityRating]"
+                      dataType="wstr"
+                      length="20"
+                      name="QualityRating" />
+                    <externalMetadataColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[SKU]"
+                      dataType="wstr"
+                      length="255"
+                      name="SKU" />
+                    <externalMetadataColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[QuantityPerUnit]"
+                      dataType="ui1"
+                      name="QuantityPerUnit" />
+                    <externalMetadataColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[ProductPrice]"
+                      dataType="numeric"
+                      name="ProductPrice"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[ProductCost]"
+                      dataType="numeric"
+                      name="ProductCost"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[UnitsInStock]"
+                      dataType="i2"
+                      name="UnitsInStock" />
+                    <externalMetadataColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[UnitsOnOrder]"
+                      dataType="i2"
+                      name="UnitsOnOrder" />
+                    <externalMetadataColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[ReorderLevel]"
+                      dataType="ui1"
+                      name="ReorderLevel" />
+                    <externalMetadataColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[CatalogLastUpdated]"
+                      dataType="wstr"
+                      length="30"
+                      name="CatalogLastUpdated" />
+                    <externalMetadataColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].ExternalColumns[DateEnteredInventory]"
+                      dataType="wstr"
+                      length="10"
+                      name="DateEnteredInventory" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[ProductID]"
+                      dataType="i4"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[ProductID]"
+                      name="ProductID" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[SupplierID]"
+                      dataType="i4"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[SupplierID]"
+                      name="SupplierID" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[ProductName]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[ProductName]"
+                      name="ProductName" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[ContainerType]"
+                      dataType="wstr"
+                      length="25"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[ContainerType]"
+                      name="ContainerType" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[ProductWeight]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[ProductWeight]"
+                      name="ProductWeight" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[IngredientType]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[IngredientType]"
+                      name="IngredientType" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[QualityRating]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[QualityRating]"
+                      name="QualityRating" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[SKU]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[SKU]"
+                      name="SKU" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[QuantityPerUnit]"
+                      dataType="ui1"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[QuantityPerUnit]"
+                      name="QuantityPerUnit" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[ProductPrice]"
+                      dataType="numeric"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[ProductPrice]"
+                      name="ProductPrice"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[ProductCost]"
+                      dataType="numeric"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[ProductCost]"
+                      name="ProductCost"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[UnitsInStock]"
+                      dataType="i2"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[UnitsInStock]"
+                      name="UnitsInStock" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[UnitsOnOrder]"
+                      dataType="i2"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[UnitsOnOrder]"
+                      name="UnitsOnOrder" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[ReorderLevel]"
+                      dataType="ui1"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[ReorderLevel]"
+                      name="ReorderLevel" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[CatalogLastUpdated]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[CatalogLastUpdated]"
+                      name="CatalogLastUpdated" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[DateEnteredInventory]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[DateEnteredInventory]"
+                      name="DateEnteredInventory" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\TransferProductAggregates\Multicast"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="Multicast">
+              <inputs>
+                <input
+                  refId="Package\TransferProductAggregates\Multicast.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\TransferProductAggregates\Multicast.Outputs[Multicast Output 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\TransferProductAggregates\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\TransferProductAggregates\Multicast.Outputs[Multicast Output 2]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 2"
+                  synchronousInputId="Package\TransferProductAggregates\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\TransferProductAggregates\Multicast.Outputs[Multicast Output 3]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 3"
+                  synchronousInputId="Package\TransferProductAggregates\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\TransferProductAggregates\Multicast.Outputs[Multicast Output 4]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 4"
+                  synchronousInputId="Package\TransferProductAggregates\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\TransferProductAggregates\NumberOfProductsBySupplier"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="NumberOfProductsBySupplier"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\TransferProductAggregates\NumberOfProductsBySupplier.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\TransferProductAggregates\NumberOfProductsBySupplier.Inputs[Aggregate Input 1].Columns[SupplierID]"
+                      cachedDataType="i4"
+                      cachedName="SupplierID"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[SupplierID]" />
+                    <inputColumn
+                      refId="Package\TransferProductAggregates\NumberOfProductsBySupplier.Inputs[Aggregate Input 1].Columns[ProductID]"
+                      cachedDataType="i4"
+                      cachedName="ProductID"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[ProductID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\TransferProductAggregates\NumberOfProductsBySupplier.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\NumberOfProductsBySupplier.Outputs[Aggregate Output 1].Columns[SupplierID]"
+                      dataType="i4"
+                      lineageId="Package\TransferProductAggregates\NumberOfProductsBySupplier.Outputs[Aggregate Output 1].Columns[SupplierID]"
+                      name="SupplierID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[SupplierID]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\NumberOfProductsBySupplier.Outputs[Aggregate Output 1].Columns[ProductID]"
+                      dataType="ui8"
+                      lineageId="Package\TransferProductAggregates\NumberOfProductsBySupplier.Outputs[Aggregate Output 1].Columns[ProductID]"
+                      name="ProductID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[ProductID]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\TransferProductAggregates\tbl_TotalUnitsInStockBySKU"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="tbl_TotalUnitsInStockBySKU"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[ tbl_TotalUnitsInStockBySKU]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\TransferProductAggregates\tbl_TotalUnitsInStockBySKU.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-80EOCJ3\SQLSERVER2022.BI_DATABASE 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-80EOCJ3\SQLSERVER2022.BI_DATABASE 2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\TransferProductAggregates\tbl_TotalUnitsInStockBySKU.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\TransferProductAggregates\tbl_TotalUnitsInStockBySKU.Inputs[OLE DB Destination Input].Columns[SKU]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="SKU"
+                      externalMetadataColumnId="Package\TransferProductAggregates\tbl_TotalUnitsInStockBySKU.Inputs[OLE DB Destination Input].ExternalColumns[SKU]"
+                      lineageId="Package\TransferProductAggregates\TotalUnitsInStockBySKU.Outputs[Aggregate Output 1].Columns[SKU]" />
+                    <inputColumn
+                      refId="Package\TransferProductAggregates\tbl_TotalUnitsInStockBySKU.Inputs[OLE DB Destination Input].Columns[UnitsInStock]"
+                      cachedDataType="i8"
+                      cachedName="UnitsInStock"
+                      externalMetadataColumnId="Package\TransferProductAggregates\tbl_TotalUnitsInStockBySKU.Inputs[OLE DB Destination Input].ExternalColumns[UnitsInStock]"
+                      lineageId="Package\TransferProductAggregates\TotalUnitsInStockBySKU.Outputs[Aggregate Output 1].Columns[UnitsInStock]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\TransferProductAggregates\tbl_TotalUnitsInStockBySKU.Inputs[OLE DB Destination Input].ExternalColumns[SKU]"
+                      dataType="wstr"
+                      length="255"
+                      name="SKU" />
+                    <externalMetadataColumn
+                      refId="Package\TransferProductAggregates\tbl_TotalUnitsInStockBySKU.Inputs[OLE DB Destination Input].ExternalColumns[UnitsInStock]"
+                      dataType="i8"
+                      name="UnitsInStock" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\TransferProductAggregates\tbl_TotalUnitsInStockBySKU.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\TransferProductAggregates\tbl_TotalUnitsInStockBySKU.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\tbl_TotalUnitsInStockBySKU.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\TransferProductAggregates\tbl_TotalUnitsInStockBySKU.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\tbl_TotalUnitsInStockBySKU.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\TransferProductAggregates\tbl_TotalUnitsInStockBySKU.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\TransferProductAggregates\tbl_TotalValueByProduct"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="tbl_TotalValueByProduct"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[tbl_TotalValueByProduct]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\TransferProductAggregates\tbl_TotalValueByProduct.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-80EOCJ3\SQLSERVER2022.BI_DATABASE 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-80EOCJ3\SQLSERVER2022.BI_DATABASE 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\TransferProductAggregates\tbl_TotalValueByProduct.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\TransferProductAggregates\tbl_TotalValueByProduct.Inputs[OLE DB Destination Input].Columns[ProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="ProductName"
+                      externalMetadataColumnId="Package\TransferProductAggregates\tbl_TotalValueByProduct.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                      lineageId="Package\TransferProductAggregates\TotalInventoryValueByProduct.Outputs[Aggregate Output 1].Columns[ProductName]" />
+                    <inputColumn
+                      refId="Package\TransferProductAggregates\tbl_TotalValueByProduct.Inputs[OLE DB Destination Input].Columns[TotalProductValue]"
+                      cachedDataType="numeric"
+                      cachedName="TotalProductValue"
+                      cachedPrecision="11"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\TransferProductAggregates\tbl_TotalValueByProduct.Inputs[OLE DB Destination Input].ExternalColumns[TotalProductValue]"
+                      lineageId="Package\TransferProductAggregates\TotalInventoryValueByProduct.Outputs[Aggregate Output 1].Columns[TotalProductValue]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\TransferProductAggregates\tbl_TotalValueByProduct.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                      dataType="wstr"
+                      length="100"
+                      name="ProductName" />
+                    <externalMetadataColumn
+                      refId="Package\TransferProductAggregates\tbl_TotalValueByProduct.Inputs[OLE DB Destination Input].ExternalColumns[TotalProductValue]"
+                      dataType="numeric"
+                      name="TotalProductValue"
+                      precision="11"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\TransferProductAggregates\tbl_TotalValueByProduct.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\TransferProductAggregates\tbl_TotalValueByProduct.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\tbl_TotalValueByProduct.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\TransferProductAggregates\tbl_TotalValueByProduct.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\tbl_TotalValueByProduct.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\TransferProductAggregates\tbl_TotalValueByProduct.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\TransferProductAggregates\TotalInventoryValueByProduct"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="TotalInventoryValueByProduct"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\TransferProductAggregates\TotalInventoryValueByProduct.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\TransferProductAggregates\TotalInventoryValueByProduct.Inputs[Aggregate Input 1].Columns[ProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="ProductName"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[ProductName]" />
+                    <inputColumn
+                      refId="Package\TransferProductAggregates\TotalInventoryValueByProduct.Inputs[Aggregate Input 1].Columns[TotalProductValue]"
+                      cachedDataType="numeric"
+                      cachedName="TotalProductValue"
+                      cachedPrecision="11"
+                      cachedScale="2"
+                      lineageId="Package\TransferProductAggregates\Derived Column.Outputs[Derived Column Output].Columns[TotalProductValue]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\TransferProductAggregates\TotalInventoryValueByProduct.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\TotalInventoryValueByProduct.Outputs[Aggregate Output 1].Columns[ProductName]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\TransferProductAggregates\TotalInventoryValueByProduct.Outputs[Aggregate Output 1].Columns[ProductName]"
+                      name="ProductName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[ProductName]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\TotalInventoryValueByProduct.Outputs[Aggregate Output 1].Columns[TotalProductValue]"
+                      dataType="numeric"
+                      lineageId="Package\TransferProductAggregates\TotalInventoryValueByProduct.Outputs[Aggregate Output 1].Columns[TotalProductValue]"
+                      name="TotalProductValue"
+                      precision="11"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\TransferProductAggregates\Derived Column.Outputs[Derived Column Output].Columns[TotalProductValue]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\TransferProductAggregates\TotalUnitsInStockBySKU"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="TotalUnitsInStockBySKU"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\TransferProductAggregates\TotalUnitsInStockBySKU.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\TransferProductAggregates\TotalUnitsInStockBySKU.Inputs[Aggregate Input 1].Columns[SKU]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="SKU"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[SKU]" />
+                    <inputColumn
+                      refId="Package\TransferProductAggregates\TotalUnitsInStockBySKU.Inputs[Aggregate Input 1].Columns[UnitsInStock]"
+                      cachedDataType="i2"
+                      cachedName="UnitsInStock"
+                      lineageId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[UnitsInStock]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\TransferProductAggregates\TotalUnitsInStockBySKU.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\TotalUnitsInStockBySKU.Outputs[Aggregate Output 1].Columns[SKU]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\TransferProductAggregates\TotalUnitsInStockBySKU.Outputs[Aggregate Output 1].Columns[SKU]"
+                      name="SKU">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[SKU]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\TransferProductAggregates\TotalUnitsInStockBySKU.Outputs[Aggregate Output 1].Columns[UnitsInStock]"
+                      dataType="i8"
+                      lineageId="Package\TransferProductAggregates\TotalUnitsInStockBySKU.Outputs[Aggregate Output 1].Columns[UnitsInStock]"
+                      name="UnitsInStock">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output].Columns[UnitsInStock]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\TransferProductAggregates.Paths[Aggregate Output 1]"
+              endId="Package\TransferProductAggregates\bl_NumberOfProductsBySupplier.Inputs[OLE DB Destination Input]"
+              name="Aggregate Output 1"
+              startId="Package\TransferProductAggregates\NumberOfProductsBySupplier.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\TransferProductAggregates.Paths[Aggregate Output 11]"
+              endId="Package\TransferProductAggregates\tbl_TotalValueByProduct.Inputs[OLE DB Destination Input]"
+              name="Aggregate Output 1"
+              startId="Package\TransferProductAggregates\TotalInventoryValueByProduct.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\TransferProductAggregates.Paths[Aggregate Output 12]"
+              endId="Package\TransferProductAggregates\tbl_TotalUnitsInStockBySKU.Inputs[OLE DB Destination Input]"
+              name="Aggregate Output 1"
+              startId="Package\TransferProductAggregates\TotalUnitsInStockBySKU.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\TransferProductAggregates.Paths[Derived Column Output]"
+              endId="Package\TransferProductAggregates\TotalInventoryValueByProduct.Inputs[Aggregate Input 1]"
+              name="Derived Column Output"
+              startId="Package\TransferProductAggregates\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\TransferProductAggregates.Paths[Multicast Output 1]"
+              endId="Package\TransferProductAggregates\NumberOfProductsBySupplier.Inputs[Aggregate Input 1]"
+              name="Multicast Output 1"
+              startId="Package\TransferProductAggregates\Multicast.Outputs[Multicast Output 1]" />
+            <path
+              refId="Package\TransferProductAggregates.Paths[Multicast Output 2]"
+              endId="Package\TransferProductAggregates\Derived Column.Inputs[Derived Column Input]"
+              name="Multicast Output 2"
+              startId="Package\TransferProductAggregates\Multicast.Outputs[Multicast Output 2]" />
+            <path
+              refId="Package\TransferProductAggregates.Paths[Multicast Output 3]"
+              endId="Package\TransferProductAggregates\TotalUnitsInStockBySKU.Inputs[Aggregate Input 1]"
+              name="Multicast Output 3"
+              startId="Package\TransferProductAggregates\Multicast.Outputs[Multicast Output 3]" />
+            <path
+              refId="Package\TransferProductAggregates.Paths[OLE DB Source Output]"
+              endId="Package\TransferProductAggregates\Multicast.Inputs[Multicast Input 1]"
+              name="OLE DB Source Output"
+              startId="Package\TransferProductAggregates\GetProductData.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="206.4,41.6"
+          Id="Package\TransferProductAggregates"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\TransferProductAggregates">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\TransferProductAggregates\GetProductData"
+          TopLeft="317.166649637952,23.0499998779595" />
+        <NodeLayout
+          Size="119.2,41.6"
+          Id="Package\TransferProductAggregates\Multicast"
+          TopLeft="341.333316623338,108.299999493758" />
+        <EdgeLayout
+          Id="Package\TransferProductAggregates.Paths[OLE DB Source Output]"
+          TopLeft="397.249983130645,64.6499998779595">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.6499996157984"
+              Start="0,0"
+              End="0,36.1499996157984">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.1499996157984" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="217.6,41.6"
+          Id="Package\TransferProductAggregates\NumberOfProductsBySupplier"
+          TopLeft="35.7083349610782,175.349999236117" />
+        <EdgeLayout
+          Id="Package\TransferProductAggregates.Paths[Multicast Output 1]"
+          TopLeft="382.399983290004,149.899999493758">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-237.891648328926,25.4499997423589"
+              Start="0,0"
+              End="-237.891648328926,17.9499997423589">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,6.3822515505252" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,6.3822515505252"
+                    Point2="0,10.3822515505252"
+                    Point3="-4,10.3822515505252" />
+                  <mssgle:LineSegment
+                    End="-233.891648328926,10.3822515505252" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-233.891648328926,10.3822515505252"
+                    Point2="-237.891648328926,10.3822515505252"
+                    Point3="-237.891648328926,14.3822515505252" />
+                  <mssgle:LineSegment
+                    End="-237.891648328926,17.9499997423589" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="232,41.6"
+          Id="Package\TransferProductAggregates\bl_NumberOfProductsBySupplier"
+          TopLeft="21.7500040295222,292.666665295594" />
+        <EdgeLayout
+          Id="Package\TransferProductAggregates.Paths[Aggregate Output 1]"
+          TopLeft="141.1291694953,216.949999236117">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,75.7166660594775"
+              Start="0,0"
+              End="0,68.2166660594775">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,68.2166660594775" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\TransferProductAggregates\Derived Column"
+          TopLeft="335.708315291547,189.202379674938" />
+        <EdgeLayout
+          Id="Package\TransferProductAggregates.Paths[Multicast Output 2]"
+          TopLeft="415.787482624109,149.899999493758">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.3023801811797"
+              Start="0,0"
+              End="0,31.8023801811797">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.8023801811797" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="219.2,41.6"
+          Id="Package\TransferProductAggregates\TotalInventoryValueByProduct"
+          TopLeft="301.190459734155,304.571426453477" />
+        <EdgeLayout
+          Id="Package\TransferProductAggregates.Paths[Derived Column Output]"
+          TopLeft="411.449387512851,230.802379674938">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,73.7690467785394"
+              Start="0,0"
+              End="0,66.2690467785394">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,66.2690467785394" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="192.8,41.6"
+          Id="Package\TransferProductAggregates\tbl_TotalValueByProduct"
+          TopLeft="315.11307996071,381.857140448619" />
+        <EdgeLayout
+          Id="Package\TransferProductAggregates.Paths[Aggregate Output 11]"
+          TopLeft="411.151769847433,346.171426453477">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.6857139951417"
+              Start="0,0"
+              End="0,28.1857139951417">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.1857139951417" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="s"
+          ParentId="Package\TransferProductAggregates"
+          FontInfo="{assembly:Null}"
+          Size="33.6,60"
+          Id="9cd31622-d8f2-4b2c-bb8c-1eaf8c864d5a"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="193.6,41.6"
+          Id="Package\TransferProductAggregates\TotalUnitsInStockBySKU"
+          TopLeft="608.333300095467,183.416665634596" />
+        <EdgeLayout
+          Id="Package\TransferProductAggregates.Paths[Multicast Output 3]"
+          TopLeft="428.733316623337,149.899999493758">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="276.399983472129,33.5166661408379"
+              Start="0,0"
+              End="276.399983472129,26.0166661408379">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.66115955447095" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.66115955447095"
+                    Point2="0,11.661159554471"
+                    Point3="4,11.661159554471" />
+                  <mssgle:LineSegment
+                    End="272.399983472129,11.661159554471" />
+                  <mssgle:CubicBezierSegment
+                    Point1="272.399983472129,11.661159554471"
+                    Point2="276.399983472129,11.661159554471"
+                    Point3="276.399983472129,15.661159554471" />
+                  <mssgle:LineSegment
+                    End="276.399983472129,26.0166661408379" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="210.4,41.6"
+          Id="Package\TransferProductAggregates\tbl_TotalUnitsInStockBySKU"
+          TopLeft="602.374967388189,303.775941565619" />
+        <EdgeLayout
+          Id="Package\TransferProductAggregates.Paths[Aggregate Output 12]"
+          TopLeft="706.354133741828,225.016665634596">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,78.759275931023"
+              Start="0,0"
+              End="0,71.259275931023">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,71.259275931023" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\TransferProductAggregates\GetProductData">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\TransferProductAggregates\bl_NumberOfProductsBySupplier">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\TransferProductAggregates\tbl_TotalValueByProduct">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\TransferProductAggregates\tbl_TotalUnitsInStockBySKU">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
